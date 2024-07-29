@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Live Stream and Content</title>
     <link rel="icon" href="icon.png" type="image/png">
     <!-- Include Video.js CSS -->
@@ -51,7 +51,9 @@
         .menu {
             list-style-type: none;
             display: flex;
-            gap: 100px;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
         }
         .menu li {
             padding: 10px;
@@ -149,6 +151,7 @@
         }
         .paragraphs {
             margin-top: 20px;
+            text-align: center;
         }
         .paragraphs p {
             margin: 10px 0;
@@ -310,31 +313,6 @@
         function toggleLoginForm() {
             document.querySelector('.login-form-container').style.display = 'block';
         }
-
-        // Prevent zooming
-        document.addEventListener('wheel', function(e) {
-            if (e.ctrlKey) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        document.addEventListener('touchstart', function(e) {
-            if (e.touches.length > 1) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        document.addEventListener('gesturestart', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('gesturechange', function(e) {
-            e.preventDefault();
-        });
-
-        document.addEventListener('gestureend', function(e) {
-            e.preventDefault();
-        });
     </script>
 </body>
 </html>
