@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Live Stream and Content</title>
     <link rel="icon" href="icon.png" type="image/png">
     <!-- Include Video.js CSS -->
@@ -14,6 +14,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         header {
             background-color: #333;
@@ -126,11 +127,10 @@
         }
         #video-container {
             position: relative;
-            padding-top: 56.25%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            width: 100%;
             background: #000;
             z-index: 5;
-            width: 100%;
-            max-width: 100%;
         }
         #video-container video {
             position: absolute;
@@ -247,7 +247,7 @@
         </ul>
     </div>
 
-   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
     <div id="video-container">
         <video id="my-video" class="video-js vjs-default-skin" controls preload="auto" poster="https://cdn.rba.co.rw/player_scripts/logo.png" data-setup='{}'>
             <source src="https://1004910551.rsc.cdn77.org/LS-PRG-44514-1/index.m3u8" type="application/x-mpegURL">
@@ -310,6 +310,31 @@
         function toggleLoginForm() {
             document.querySelector('.login-form-container').style.display = 'block';
         }
+
+        // Prevent zooming
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('touchstart', function(e) {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gesturechange', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('gestureend', function(e) {
+            e.preventDefault();
+        });
     </script>
 </body>
 </html>
