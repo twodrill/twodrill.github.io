@@ -9,7 +9,7 @@
     <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet">
     <style>
        
-   body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
@@ -17,6 +17,7 @@
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+
 header {
     background-color: #333;
     color: white;
@@ -28,7 +29,9 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
+
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -37,6 +40,7 @@ header {
     display: inline-block;
     animation: moveLeft 10s linear infinite;
 }
+
 @keyframes moveLeft {
     from {
         transform: translateX(100%);
@@ -45,10 +49,12 @@ header {
         transform: translateX(-100%);
     }
 }
+
 nav {
     display: flex;
     align-items: center;
 }
+
 .menu {
     list-style-type: none;
     display: flex;
@@ -56,13 +62,16 @@ nav {
     margin: 0;
     padding: 0;
 }
+
 .menu li {
     padding: 10px;
 }
+
 .menu li a {
     color: white;
     text-decoration: none;
 }
+
 .sidebar {
     position: fixed;
     top: 0;
@@ -74,22 +83,27 @@ nav {
     transition: 0.3s ease;
     z-index: 20;
 }
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
 }
+
 .sidebar ul li {
     padding: 15px;
 }
+
 .sidebar ul li a {
     color: white;
     text-decoration: none;
 }
+
 .sidebar-toggle {
     display: none;
     cursor: pointer;
     z-index: 15;
 }
+
 .sidebar-toggle span {
     display: block;
     width: 25px;
@@ -97,6 +111,7 @@ nav {
     background-color: white;
     margin: 5px 0;
 }
+
 .login-form-container {
     display: none;
     position: fixed;
@@ -108,15 +123,18 @@ nav {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
 .login-form label {
     display: block;
     margin-bottom: 5px;
 }
+
 .login-form input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
 }
+
 .login-form button {
     width: 100%;
     padding: 10px;
@@ -125,9 +143,11 @@ nav {
     border: none;
     cursor: pointer;
 }
+
 .login-form button:hover {
     background-color: #555;
 }
+
 #video-container {
     position: relative;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
@@ -135,6 +155,7 @@ nav {
     background: #000;
     z-index: 5;
 }
+
 #video-container video {
     position: absolute;
     top: 0;
@@ -143,6 +164,7 @@ nav {
     height: 100%;
     object-fit: cover;
 }
+
 .container {
     flex: 1;
     display: flex;
@@ -150,19 +172,23 @@ nav {
     align-items: center;
     padding: 20px;
 }
+
 .paragraphs {
     margin-top: 20px;
     text-align: center;
 }
+
 .paragraphs p {
     margin: 10px 0;
 }
+
 @media (max-width: 768px) {
     .menu {
         display: none;
     }
     .sidebar {
-        left: -250px;
+        left: 0;
+        width: 100%; /* Adjust sidebar width for mobile view */
     }
     .sidebar.active {
         left: 0;
@@ -171,6 +197,7 @@ nav {
         display: block;
     }
 }
+
 .footer-container {
     display: flex;
     flex-wrap: wrap;
@@ -181,39 +208,49 @@ nav {
     width: 100%; /* Ensure footer width matches video container width */
     box-sizing: border-box; /* Include padding in the width calculation */
 }
+
 .footer-section {
     flex: 1 1 300px;
     margin: 10px;
 }
+
 .footer-section h4 {
     margin-bottom: 8px;
 }
+
 .footer-section ul {
     list-style-type: none;
     padding: 0;
 }
+
 .footer-section ul li {
     margin-bottom: 8px;
 }
+
 .footer-section ul li a {
     color: #fff;
     text-decoration: none;
 }
+
 .footer-section ul li a:hover {
     text-decoration: underline;
 }
+
 .social-media {
     display: flex;
     list-style-type: none;
     padding: 0;
 }
+
 .social-media li {
     margin-right: 30px;
 }
+
 .social-media img {
     width: 25px;
     height: 25px;
 }
+
 .footer-bottom {
     text-align: center;
     padding: 10px;
