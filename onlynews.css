@@ -1,0 +1,41 @@
+.baby {
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden; 
+}
+.container {
+    width: 100%;
+    margin: auto;
+   
+    padding: 2rem 0;
+}
+.story-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.story-section h2 {
+    margin-top: 0;
+}
+.story-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    
+}
+.malove{
+ font-size: 20px;
+
+
+}

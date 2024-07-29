@@ -1,0 +1,45 @@
+
+.kumutima{
+    text-align: center;
+}
+.content-wrapper {
+    display: flex;
+    margin: 20px;
+}
+
+main {
+    flex: 3;
+    margin-right: 20px;
+}
+
+main article {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.eric {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.eric  h2 {
+    margin-top: 0;
+}
+
+.eric ul {
+    list-style: none;
+    padding: 0;
+}
+
+.eric ul li {
+    margin-bottom: 10px;
+}
+
+.eric ul li a {
+    text-decoration: none;
+    color: #333;
+}
